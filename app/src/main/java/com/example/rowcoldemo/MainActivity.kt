@@ -8,6 +8,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -38,28 +39,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column(modifier) {
-        Row {
-            Column {
-                TextCell("1")
-                TextCell("2")
-                TextCell("3")
-            }
-            Column {
-                TextCell("4")
-                TextCell("5")
-                TextCell("6")
-            }
-            Column {
-                TextCell("7")
-                TextCell("8")
-            }
-        }
-        Row {
-            TextCell("9")
-            TextCell("10")
-            TextCell("11")
-        }
+    Row(modifier = modifier.fillMaxWidth()) {
+        TextCell("1", Modifier.weight(weight = 0.2f, fill = true))
+        TextCell("2", Modifier.weight(weight = 0.4f, fill = true))
+        TextCell("3", Modifier.weight(weight = 0.3f, fill = true))
     }
 }
 
